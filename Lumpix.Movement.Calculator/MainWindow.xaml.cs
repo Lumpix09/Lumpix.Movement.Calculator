@@ -20,5 +20,24 @@ namespace Lumpix.Movement.Calculator
         {
             InitializeComponent();
         }
+
+        private void btn_uniform_motion_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btn_accelerated_motion_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_circle_motion_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_swing_motion_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
