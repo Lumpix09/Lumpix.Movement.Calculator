@@ -11,33 +11,12 @@ using System.Windows.Shapes;
 
 namespace Lumpix.Movement.Calculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btn_uniform_motion_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void btn_accelerated_motion_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn_circle_motion_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn_swing_motion_click(object sender, RoutedEventArgs e)
-        {
-
+            MainFrame.Content = new MainPage();
         }
     }
 }
