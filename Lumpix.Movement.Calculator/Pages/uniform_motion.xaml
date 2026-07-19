@@ -7,11 +7,10 @@
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="uniform_motion">
+      Title="uniform_motion" Background="white">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -25,6 +24,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btn_home_click" BorderBrush="Transparent">
             <StackPanel>
@@ -32,6 +33,25 @@
                 <TextBlock Text="Home" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <xctk:DoubleUpDown Grid.Row="1" Grid.Column="1" Margin="0,26" Watermark="Starting Position" Increment=".1" FormatString="F3" Name="dusp_start_pos" LostKeyboardFocus="dusp_start_pos_LostKeyboardFocus"/>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Content="Uniform Motion" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <Label Grid.Row="2" Grid.Column="1" Content="Starting Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="2" Grid.Column="1" Margin="5,24,5,10" Watermark="Starting Position" Increment=".1" FormatString="F3" Name="dusp_start_pos_1" LostKeyboardFocus="dusp_start_pos_1_LostKeyboardFocus"/>
+
+        <Label Grid.Row="3" Grid.Column="1" Content="Velocity (m/s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="1" Margin="5,24,5,10" Watermark="Velocity" Increment=".1" FormatString="F3" Name="dusp_velocity_1" LostKeyboardFocus="dusp_velocity_1_LostKeyboardFocus"/>
+
+        <Label Grid.Row="4" Grid.Column="1" Content="Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="1" Margin="5,24,5,10" Watermark="Time" Increment=".1" FormatString="F3" Name="dusp_time_1" LostKeyboardFocus="dusp_time_1_LostKeyboardFocus"/>
+
+        
+        <Label Grid.Row="2" Grid.Column="3" Content="Starting Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="2" Grid.Column="3" Margin="5,24,5,10" Watermark="Starting Position" Increment=".1" FormatString="F3" Name="dusp_start_pos_2" LostKeyboardFocus="dusp_start_pos_2_LostKeyboardFocus"/>
+
+        <Label Grid.Row="3" Grid.Column="3" Content="Velocity (m/s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="3" Margin="5,24,5,10" Watermark="Velocity" Increment=".1" FormatString="F3" Name="dusp_velocity_2" LostKeyboardFocus="dusp_velocity_2_LostKeyboardFocus"/>
+
+        <Label Grid.Row="4" Grid.Column="3" Content="Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="3" Margin="5,24,5,10" Watermark="Time" Increment=".1" FormatString="F3" Name="dusp_time_2" LostKeyboardFocus="dusp_time_2_LostKeyboardFocus"/>
     </Grid>
 </Page>
