@@ -26,5 +26,10 @@ namespace Lumpix.Movement.Calculator
         {
             NavigationService.Navigate(new MainPage());
         }
+
+        private void dusp_start_pos_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+
+        }
     }
 }
