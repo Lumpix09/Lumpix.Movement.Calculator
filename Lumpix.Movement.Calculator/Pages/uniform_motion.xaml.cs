@@ -18,6 +18,7 @@ namespace Lumpix.Movement.Calculator
     /// </summary>
     public partial class uniform_motion : Page
     {
+        
         public uniform_motion()
         {
             InitializeComponent();
@@ -29,17 +30,39 @@ namespace Lumpix.Movement.Calculator
 
         private void dusp_values_1_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            
+            double d0 = dusp_start_pos_1.Value ?? 0;
+            double v = dusp_velocity_1.Value ?? 0;
+            double t = dusp_time_1.Value ?? 0;
+
+            double d = Math.Round(d0 + v * t, 3);
+
+            lbl_final_position_1.Content = d.ToString();
         }
 
         private void dusp_values_2_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
+            double d0 = dusp_start_pos_2.Value ?? 0;
+            double v = dusp_velocity_2.Value ?? 0;
+            double t = dusp_time_2.Value ?? 0;
 
+            double d = Math.Round(d0 + v * t, 3);
+
+            lbl_final_position_2.Content = d.ToString();
         }
 
         private void btn_calc_intersection(object sender, RoutedEventArgs e)
         {
+            double t1 = dusp_time_1.Value ?? 0;
+            double v1 = dusp_velocity_1.Value ?? 0;
+            double x1 = dusp_start_pos_1.Value ?? 0;
+            double t2 = dusp_time_2.Value ?? 0;
+            double v2 = dusp_velocity_2.Value ?? 0;
+            double x2 = dusp_start_pos_2.Value ?? 0;
 
+            double t_intersection = (-t2 * v2 + x2 + v1 * t1 - x1) / (v1 - v2);
+            lbl_out_time_of_intersection.Content = Math.Round(t_intersection, 3).ToString();
+            double d = Math.Round(x1 + v1 * t_intersection, 3);
+            lbl_out_place_of_intersection.Content = d.ToString();
         }
     }
 }
