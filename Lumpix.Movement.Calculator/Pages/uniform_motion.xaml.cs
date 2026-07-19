@@ -33,8 +33,9 @@ namespace Lumpix.Movement.Calculator
             double d0 = dusp_start_pos_1.Value ?? 0;
             double v = dusp_velocity_1.Value ?? 0;
             double t = dusp_time_1.Value ?? 0;
+            double t0 = dusp_start_time_1.Value ?? 0;
 
-            double d = Math.Round(d0 + v * t, 3);
+            double d = Math.Round(d0 + v * (t - t0), 3);
 
             lbl_final_position_1.Content = d.ToString();
         }
@@ -44,18 +45,19 @@ namespace Lumpix.Movement.Calculator
             double d0 = dusp_start_pos_2.Value ?? 0;
             double v = dusp_velocity_2.Value ?? 0;
             double t = dusp_time_2.Value ?? 0;
+            double t0 = dusp_start_time_2.Value ?? 0;
 
-            double d = Math.Round(d0 + v * t, 3);
+            double d = Math.Round(d0 + v * (t - t0), 3);
 
             lbl_final_position_2.Content = d.ToString();
         }
 
         private void btn_calc_intersection(object sender, RoutedEventArgs e)
         {
-            double t1 = dusp_time_1.Value ?? 0;
+            double t1 = dusp_start_time_1.Value ?? 0;
             double v1 = dusp_velocity_1.Value ?? 0;
             double x1 = dusp_start_pos_1.Value ?? 0;
-            double t2 = dusp_time_2.Value ?? 0;
+            double t2 = dusp_start_time_2.Value ?? 0;
             double v2 = dusp_velocity_2.Value ?? 0;
             double x2 = dusp_start_pos_2.Value ?? 0;
 
