@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btn_home_click" BorderBrush="Transparent">
             <StackPanel>
-                <Image Source="Images/home.png" Width="30" Height="30" />
+                <Image Source="/Images/home.png" Width="30" Height="30" />
                 <TextBlock Text="Home" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
