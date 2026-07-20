@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace Lumpix.Movement.Calculator
 {
-    /// <summary>
-    /// Interaktionslogik für uniform_motion.xaml
-    /// </summary>
     public partial class uniform_motion : Page
     {
         
@@ -23,11 +20,15 @@ namespace Lumpix.Movement.Calculator
         {
             InitializeComponent();
         }
+        #region Event Handlers
+        #region navigation
         private void btn_home_click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainPage());
         }
-
+        #endregion
+        #region calculations
+        #region calculation of final position
         private void dusp_values_1_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double d0 = dusp_start_pos_1.Value ?? 0;
@@ -51,7 +52,8 @@ namespace Lumpix.Movement.Calculator
 
             lbl_final_position_2.Content = d.ToString();
         }
-
+        #endregion
+        #region calculation of intersection
         private void btn_calc_intersection(object sender, RoutedEventArgs e)
         {
             double t1 = dusp_start_time_1.Value ?? 0;
@@ -64,8 +66,12 @@ namespace Lumpix.Movement.Calculator
 
             double t_intersection = (-t2 * v2 + x2 + v1 * t1 - x1) / (v1 - v2);
             lbl_out_time_of_intersection.Content = Math.Round(t_intersection, 3).ToString();
+
             double d = Math.Round(x1 + v1 * (t_intersection - t01), 3);
             lbl_out_place_of_intersection.Content = d.ToString();
         }
+        #endregion
+        #endregion
+        #endregion
     }
 }
