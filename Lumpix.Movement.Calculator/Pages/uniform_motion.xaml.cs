@@ -60,10 +60,11 @@ namespace Lumpix.Movement.Calculator
             double t2 = dusp_start_time_2.Value ?? 0;
             double v2 = dusp_velocity_2.Value ?? 0;
             double x2 = dusp_start_pos_2.Value ?? 0;
+            double t01 = dusp_start_time_1.Value ?? 0;
 
             double t_intersection = (-t2 * v2 + x2 + v1 * t1 - x1) / (v1 - v2);
             lbl_out_time_of_intersection.Content = Math.Round(t_intersection, 3).ToString();
-            double d = Math.Round(x1 + v1 * t_intersection, 3);
+            double d = Math.Round(x1 + v1 * (t_intersection - t01), 3);
             lbl_out_place_of_intersection.Content = d.ToString();
         }
     }
