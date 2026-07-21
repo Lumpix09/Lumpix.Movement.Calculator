@@ -4,13 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Lumpix.Movement.Calculator"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="accelerated_motion">
+      Title="accelerated_motion" Background="white">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -24,6 +24,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btn_home_click" BorderBrush="Transparent">
             <StackPanel>
@@ -31,5 +33,50 @@
                 <TextBlock Text="Home" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Content="Accelerated Motion" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="1" Content="Starting Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="2" Grid.Column="1" Margin="5,24,5,7" Watermark="Starting Position" Increment=".1" FormatString="F3" Name="dusp_start_pos_1" LostKeyboardFocus="dusp_values_1_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="1" Content="Velocity (m/s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="1" Margin="5,24,5,7" Watermark="Velocity" Increment=".1" FormatString="F3" Name="dusp_velocity_1" LostKeyboardFocus="dusp_values_1_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Acceleration (m/s²)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="0" Margin="5,24,5,7" Watermark="Acceleration" Increment=".1" FormatString="F3" Name="dusp_acceleration_1" LostKeyboardFocus="dusp_values_1_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="4" Grid.Column="1" Content="Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="1" Margin="5,24,5,7" Watermark="Time" Increment=".1" FormatString="F3" Name="dusp_time_1" LostKeyboardFocus="dusp_values_1_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Start Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="0" Margin="5,24,5,7" Watermark="Start Time" Increment=".1" FormatString="F3" Name="dusp_start_time_1" LostKeyboardFocus="dusp_values_1_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Final Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Name="lbl_final_position_1"  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="---" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+        <Label Grid.Row="2" Grid.Column="3" Content="Starting Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="2" Grid.Column="3" Margin="5,24,5,7" Watermark="Starting Position" Increment=".1" FormatString="F3" Name="dusp_start_pos_2" LostKeyboardFocus="dusp_values_2_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="3" Content="Velocity (m/s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="3" Margin="5,24,5,7" Watermark="Velocity" Increment=".1" FormatString="F3" Name="dusp_velocity_2" LostKeyboardFocus="dusp_values_2_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="4" Content="Acceleration (m/s²)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="3" Grid.Column="4" Margin="5,24,5,7" Watermark="Acceleration" Increment=".1" FormatString="F3" Name="dusp_acceleration_2" LostKeyboardFocus="dusp_values_2_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="4" Grid.Column="3" Content="Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="3" Margin="5,24,5,7" Watermark="Time" Increment=".1" FormatString="F3" Name="dusp_time_2" LostKeyboardFocus="dusp_values_2_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="4" Grid.Column="4" Content="Start Time (s)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <xctk:DoubleUpDown Grid.Row="4" Grid.Column="4" Margin="5,24,5,7" Watermark="Start Time" Increment=".1" FormatString="F3" Name="dusp_start_time_2" LostKeyboardFocus="dusp_values_2_LostKeyboardFocus" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="Final Position (m)" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Name="lbl_final_position_2"  Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="---" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+
+        <Button Grid.Column="2" Grid.Row="6" Content="calculate intersection" FontWeight="Bold" FontSize="14" VerticalAlignment="Top" Click="btn_calc_intersection"/>
+        <Label Grid.Column="1" Grid.Row="6" Content="time of intercection (s)" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontSize="12" FontWeight="Bold"/>
+        <Label Grid.Column="3" Grid.Row="6" Content="place of intercection (m)" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontSize="12" FontWeight="bold"/>
+        <Label Grid.Column="1" Grid.Row="7" Content="---" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="12" Name="lbl_out_time_of_intersection"/>
+        <Label Grid.Column="3" Grid.Row="7" Content="---" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="12" Name="lbl_out_place_of_intersection"/>
     </Grid>
 </Page>
