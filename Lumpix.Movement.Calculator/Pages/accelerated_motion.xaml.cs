@@ -31,11 +31,12 @@ namespace Lumpix.Movement.Calculator
         private void dusp_values_1_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double d0 = dusp_start_pos_1.Value ?? 0;
-            double v = dusp_velocity_1.Value ?? 0;
+            double v0 = dusp_velocity_1.Value ?? 0;
             double t = dusp_time_1.Value ?? 0;
             double t0 = dusp_start_time_1.Value ?? 0;
+            double a = dusp_acceleration_1.Value ?? 0;
 
-            double d = Math.Round(d0 + v * (t - t0), 3);
+            double d = Math.Round(d0 + v0 * (t - t0) + 0.5 * a * Math.Pow(t - t0, 2), 3);
 
             lbl_final_position_1.Content = d.ToString();
         }
@@ -43,11 +44,12 @@ namespace Lumpix.Movement.Calculator
         private void dusp_values_2_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double d0 = dusp_start_pos_2.Value ?? 0;
-            double v = dusp_velocity_2.Value ?? 0;
+            double v0 = dusp_velocity_2.Value ?? 0;
             double t = dusp_time_2.Value ?? 0;
             double t0 = dusp_start_time_2.Value ?? 0;
+            double a = dusp_acceleration_2.Value ?? 0;
 
-            double d = Math.Round(d0 + v * (t - t0), 3);
+            double d = Math.Round(d0 + v0 * (t - t0) + 0.5 * a * Math.Pow(t - t0, 2), 3);
 
             lbl_final_position_2.Content = d.ToString();
         }
@@ -55,6 +57,7 @@ namespace Lumpix.Movement.Calculator
         #region calculation of intersection
         private void btn_calc_intersection(object sender, RoutedEventArgs e)
         {
+        // a formula to calculate where two accelerated motions meet is needed  
             double t1 = dusp_start_time_1.Value ?? 0;
             double v1 = dusp_velocity_1.Value ?? 0;
             double x1 = dusp_start_pos_1.Value ?? 0;
