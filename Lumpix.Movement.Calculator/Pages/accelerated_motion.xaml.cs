@@ -57,6 +57,7 @@ namespace Lumpix.Movement.Calculator
         #region calculation of intersection
         private void btn_calc_intersection(object sender, RoutedEventArgs e)
         {
+        // a formula to calculate where two accelerated motions meet is needed  
             double t1 = dusp_start_time_1.Value ?? 0;
             double v1 = dusp_velocity_1.Value ?? 0;
             double x1 = dusp_start_pos_1.Value ?? 0;
